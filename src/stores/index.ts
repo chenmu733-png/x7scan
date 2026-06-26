@@ -2,6 +2,33 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { THEME } from '@/config/constants';
 
+const safeStorage = {
+  getItem: (name: string): string | null => {
+    if (typeof window === 'undefined') return null;
+    try {
+      return localStorage.getItem(name);
+    } catch {
+      return null;
+    }
+  },
+  setItem: (name: string, value: string): void => {
+    if (typeof window === 'undefined') return;
+    try {
+      localStorage.setItem(name, value);
+    } catch {
+      // Storage full or blocked
+    }
+  },
+  removeItem: (name: string): void => {
+    if (typeof window === 'undefined') return;
+    try {
+      localStorage.removeItem(name);
+    } catch {
+      // ignore
+    }
+  },
+};
+
 interface ThemeState {
   theme: 'dark' | 'light';
   setTheme: (theme: 'dark' | 'light') => void;
@@ -17,7 +44,8 @@ export const useThemeStore = create<ThemeState>()(
     }),
     {
       name: 'x7scan-theme',
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => safeStorage),
+      skipHydration: true,
     }
   )
 );
@@ -62,8 +90,9 @@ export const useSearchStore = create<SearchState>()(
     }),
     {
       name: 'x7scan-search',
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => safeStorage),
       partialize: (state) => ({ recentSearches: state.recentSearches }),
+      skipHydration: true,
     }
   )
 );
@@ -176,7 +205,8 @@ export const useWatchlistStore = create<WatchlistState>()(
     }),
     {
       name: 'x7scan-watchlist',
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => safeStorage),
+      skipHydration: true,
     }
   )
 );
@@ -259,7 +289,8 @@ export const useDashboardStore = create<DashboardState>()(
     }),
     {
       name: 'x7scan-dashboard',
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => safeStorage),
+      skipHydration: true,
     }
   )
 );

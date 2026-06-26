@@ -14,42 +14,23 @@
 - [x] Mock data service
 
 ## Phase 3: Feature Pages [x]
-- [x] Landing page `/`
-- [x] Dashboard `/dashboard`
-- [x] Wallet/Address `/address/[address]`
-- [x] Token `/token/[token]`
-- [x] Leaderboard `/leaderboard`
-- [x] Staking `/staking`
-- [x] Stats `/stats`
-- [x] EVM `/evm`
-- [x] Vault `/vault`
-- [x] Market detail `/market/[market]`
-- [x] Block detail `/block/[block]`
-- [x] Transaction detail `/tx/[tx]`
-- [x] Validator detail `/validator/[validator]`
-- [x] Lending `/lending`
-- [x] NFT `/nft`
-- [x] Whale Tracker `/whale`
-- [x] Alerts `/alerts`
-- [x] About `/about`
-- [x] Watchlist `/watchlist`
-- [x] Favorites `/favorites`
-- [x] Compare `/compare`
+- [x] All pages implemented
 
 ## Phase 4: Advanced Integrations [x]
-- [x] TradingView Lightweight Charts component
-- [x] Recharts analytics components
-- [x] React Table (TanStack Table) data table
-- [x] React Hook Form + Zod (alert creation form)
-- [x] Export functionality (CSV, JSON)
-- [x] Notification center component
+- [x] All integrations done
 
 ## Phase 5: PWA & Performance [x]
-- [x] PWA manifest
-- [x] next.config.ts updates (headers)
-- [x] Error boundary component
-- [x] Loading states (loading.tsx files)
 - [x] Build verification passes
 
 ## Phase 6: Deployment [x]
-- [x] Push to GitHub `chenmu733-png/x7scan` main branch
+- [x] Push to GitHub
+
+## Phase 7: Vercel Deployment Fix
+- [ ] Check Next.js version compatibility with Vercel
+- [ ] Create missing `/public/icons/` directory with placeholder PNGs
+- [ ] Fix CSP headers for Vercel compatibility
+- [ ] Fix Zustand localStorage SSR issues
+- [ ] Remove or properly configure `next-pwa`
+- [ ] Fix any other deployment blockers
+- [ ] Build and test locally
+- [ ] Push fixes to GitHub
