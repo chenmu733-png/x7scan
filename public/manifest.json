@@ -1,0 +1,24 @@
+{
+  "name": "X7Scan",
+  "short_name": "X7Scan",
+  "description": "The most comprehensive Hyperliquid blockchain explorer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1a1a",
+  "theme_color": "#14b8a6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["finance", "utilities"],
+  "screenshots": []
+}
